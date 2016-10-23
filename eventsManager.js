@@ -1,4 +1,4 @@
-let _eventManager = function()
+let _eventsManager = function()
 {
 	let self = this;
 	let events = {};
