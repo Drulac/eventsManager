@@ -1,31 +1,28 @@
-let _eventsManager = function()
-{
-	let self = this;
-	let events = {};
+const events = {}
+const c = {}
 
-	self.on = function(event, func)
-	{
-		if(typeof events[event] != "array")
-		{
-			events[event] = [];
-		}
-		events[event].push(func);
+c.on = (event, func) => {
+	if (typeof events[event] != 'array') {
+		events[event] = []
+	}
+	events[event].push(func)
 
-		return self;
-	};
+	return c
+}
 
-	self.run = function(event, data)
-	{
-		if(typeof events[event] == "array" || typeof events[event] == "object")
-		{
-			for(let i = 0, ni = events[event].length; i < ni; i++)
-			{
-				setTimeout(function(){
-					events[event][i].apply(null, data);
-				}, 1);
-			}
-		}
+c.run = (event, data) => {
+	if (
+		typeof events[event] == 'array' ||
+		typeof events[event] == 'object'
+	) {
+		events[event].forEach((e) =>
+			setTimeout(() => {
+				//console.log(event, e, data)
+				e(data)
+			}, 1)
+		)
+	}
 
-		return self;
-	};
-};
+	return c
+}
+module.exports = c

@@ -1,23 +1,23 @@
 # eventsManager
-A little JS class to add events to your class
+A little module to add events to your class
 
-in your class, declare a new `\_eventsManager` class :
 ```js
-let events = new _eventsManager();
+const events = require('small-events-manager');
 ```
-declare the on method of the event class as the on method of your class :
+
+declare the `on` method of the event class as the on method of your class :
 ```js
 self.on = events.on;
 ```
 
 use the on method to add function on events :
 ```js
-yourClass.on("yourEvent", function(yourArgs){
+yourClass.on("yourEvent", (data)=>{
 	//your code here
 });
 ```
 
-and into your class, use the run method to run an event, with your args in an array :
+and into your class, use the run method to run an event, with your data :
 ```js
-events.run("yourEvent", yourArgs);
+events.run("yourEvent", data);
 ```
