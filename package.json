@@ -1,0 +1,19 @@
+{
+  "name": "small-events-manager",
+  "version": "1.0.0",
+  "description": "small events manager",
+  "main": "eventsManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drulac/eventsManager.git"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Drulac/eventsManager/issues"
+  },
+  "homepage": "https://github.com/Drulac/eventsManager#readme"
+}
